@@ -1,21 +1,17 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { getDate, getMonthFromInt } from "./Helpers.js";
 
-export class RetrievalDate extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { date: getDate() };
-  }
+export function RetrievalDate() {
+  // Use react hooks to set state   
+  const [date] = useState(getDate());
 
-  render() {
     return (
       <div>
-        {`${getMonthFromInt(this.state.date.month)} ${this.state.date.date}, ${
-          this.state.date.year
+        {`${getMonthFromInt(date.month)} ${date.date}, ${
+          date.year
         }`}
       </div>
     );
-  }
 }
 
 export default RetrievalDate;

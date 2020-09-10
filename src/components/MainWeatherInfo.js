@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class MainWeatherInfo extends Component {
-  render() {
+export function MainWeatherInfo() {
     return (
       <div>
         <h1>Toronto, CA</h1>
@@ -9,7 +8,6 @@ export class MainWeatherInfo extends Component {
         <h1>Clouds</h1>
       </div>
     );
-  }
 }
 
 export default MainWeatherInfo;

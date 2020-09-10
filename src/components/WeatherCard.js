@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import MainWeatherInfo from "./MainWeatherInfo";
-import RetrievalDate from "./RetrievalDate";
+import RetrievalDate from "./RetrievalDate";   
 
 //import "../styling/WeatherCard.css";
 
-export class WeatherCard extends Component {
-  render() {
+export function WeatherCard() {
     return (
       <div>
         <MainWeatherInfo />
@@ -13,7 +12,6 @@ export class WeatherCard extends Component {
         <RetrievalDate />
       </div>
     );
-  }
 }
 
 export default WeatherCard;
