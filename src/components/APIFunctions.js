@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const FetchAPIData = (url) => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Check if url is empty
@@ -14,7 +14,6 @@ export const FetchAPIData = (url) => {
         //fetch data asynchronously
         let response = await fetch(url, { mode: "cors" });
         const data = await response.json();
-        console.log(data);
         setData(data);
         setIsLoading(false);
       } catch (error) {

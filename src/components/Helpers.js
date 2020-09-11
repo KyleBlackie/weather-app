@@ -41,3 +41,11 @@ export const getMonthFromInt = (month) => {
       return "Error Month Not Available";
   }
 };
+
+// converts from kelvin to celcius
+export const convertToCelcius = (tempK) =>  tempK - 273.15;
+
+
+// converts from kelvin to fahrenheit
+export const convertToFahrenheit = (tempK) => tempK * (9/5) - 459.67;
+

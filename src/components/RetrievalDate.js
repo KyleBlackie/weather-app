@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getDate, getMonthFromInt } from "./Helpers.js";
+import { getDate, getMonthFromInt } from "./Helpers";
 
 export function RetrievalDate() {
   // Use react hooks to set state   
