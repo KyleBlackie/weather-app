@@ -34,7 +34,6 @@ export function WeatherCard() {
         <div>
           <MainWeatherInfo {...mainData} />
           <MiscWeatherInfo {...miscData} />
-          <RetrievalDate />
         </div>
       )}
     </div>

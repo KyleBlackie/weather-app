@@ -71,8 +71,41 @@ export const getMonthFromInt = (month) => {
   }
 };
 
+// given a degree, outputs the direction in common terms i.e. N, NE, E, SE ...
+export const getDirectionFromDegree = (degree) => {
+
+  // divide up 360 degrees into 8 parts... 45 degrees for each direction
+  if(degree >= 337.5 || degree < 22.5) {
+    return "N";
+  } else if(degree < 67.5) {
+    return "NE";
+  } else if(degree < 112.5) {
+    return "E";
+  } else if(degree < 157.5) {
+    return "SE";
+  } else if(degree < 202.5) {
+    return "S";
+  } else if(degree < 247.5) {
+    return "SW";
+  } else if(degree < 292.5) {
+    return "W";
+  } else if(degree < 337.5) {
+    return "NW";
+  } else {
+    return "N/A";
+  }
+};
+
+// CONVERSION HELPER FUNCTIONS --------------------
+
 // converts from kelvin to celcius
 export const convertToCelcius = (tempK) => tempK - 273.15;
 
 // converts from kelvin to fahrenheit
 export const convertToFahrenheit = (tempK) => tempK * (9 / 5) - 459.67;
+
+// converts from meter/sec to kilometres per hour
+export const convertToKPH = (metresPerSec) => metresPerSec * 3.6;
+
+// converts from meter/sec to miles per hour
+export const convertToMPH = (metresPerSec) => metresPerSec * 2.23694;
