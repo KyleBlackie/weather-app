@@ -10,7 +10,7 @@ export function Loading() {
       <FontAwesomeIcon
         icon={faSpinner}
         size="lg"
-        style={{ "font-size": "10vw" }}
+        style={{ fontSize: "10vw" }}
         spin
       />
     </div>

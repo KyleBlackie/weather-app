@@ -13,7 +13,7 @@ export function MainWeatherInfo(mainData, unit) {
       <FontAwesomeIcon
         icon={pickFAIcon(mainData.id)}
         size="lg"
-        style={{ "font-size": "10vw" }}
+        style={{ fontSize: "10vw" }}
       />
     </div>
   );

@@ -4,7 +4,8 @@ import MainWeatherInfo from "./MainWeatherInfo";
 import MiscWeatherInfo from "./MiscWeatherInfo";
 import RetrievalDate from "./RetrievalDate";
 import Loading from "./Loading";
-import { getWeatherData } from "./APIFunctions";
+import ErrorMessage from "./ErrorMessage";
+import { GetWeatherData } from "./APIFunctions";
 
 //import "../styling/WeatherCard.css";
 
@@ -14,12 +15,20 @@ export function WeatherCard() {
   const [unit, setUnit] = useState("m");
 
   // Fetch data for selected city
-  const { mainData, miscData, isLoading } = getWeatherData(city);
+  const {
+    mainData,
+    miscData,
+    isLoading,
+    errorOcurred,
+    errorMsg,
+  } = GetWeatherData(city);
 
   return (
     <div>
       <Header setCity={setCity} />
-      { isLoading ? (
+      {errorOcurred ? (
+        <ErrorMessage errorMessage={errorMsg} />
+      ) : isLoading ? (
         <Loading />
       ) : (
         <div>
