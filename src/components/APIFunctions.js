@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+// uses fetch to request data from OpenWeatherAPI
 export const FetchAPIData = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,7 @@ export const FetchAPIData = (url) => {
   };
 };
 
+// handles data returned from FetchAPIData
 export const getWeatherData = (query) => {
   // Unfortunately, since this project is done without a backend there is no way to properly protect the api key
   // If this were a full stack app I would've done this logic on the backend so that the api key would be safe
@@ -65,5 +67,6 @@ export const getWeatherData = (query) => {
     return { mainData, miscData, isLoading };
   }
 
+  // let caller know that the data has not yet been received
   return { isLoading };
 };
