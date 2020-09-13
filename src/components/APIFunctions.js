@@ -37,34 +37,33 @@ export const getWeatherData = (query) => {
     query &&
     `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}`;
 
-  // fetch data using constructed url  
-  const {data, isLoading} = FetchAPIData(url);
+  // fetch data using constructed url
+  const { data, isLoading } = FetchAPIData(url);
 
-  if(data !== null) {
+  if (data !== null) {
     // grab needed data ...
     const mainData = {
-        city: data.name,
-        country: data.sys.country,
-        weather: data.weather[0].main,
-        description: data.weather[0].description,
-        icon: data.weather[0].icon,
-        temp: data.main.temp,
-        feelsLike: data.main.feels_like,
-        tempMin: data.main.temp_min,
-        tempMax: data.main.temp_max,
+      city: data.name,
+      country: data.sys.country,
+      weather: data.weather[0].main,
+      description: data.weather[0].description,
+      id: data.weather[0].id,
+      temp: data.main.temp,
+      feelsLike: data.main.feels_like,
+      tempMin: data.main.temp_min,
+      tempMax: data.main.temp_max,
     };
 
     const miscData = {
-        humidity: data.main.humidity,
-        pressure: data.main.pressure,
-        visibility: data.visibility,
-        windDeg: data.wind.deg,
-        windSpeed: data.wind.speed,
+      humidity: data.main.humidity,
+      pressure: data.main.pressure,
+      visibility: data.visibility,
+      windDeg: data.wind.deg,
+      windSpeed: data.wind.speed,
     };
 
-    return {mainData, miscData, isLoading};
-
+    return { mainData, miscData, isLoading };
   }
 
-  return {isLoading};
+  return { isLoading };
 };

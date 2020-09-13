@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "./Header";
 import MainWeatherInfo from "./MainWeatherInfo";
 import MiscWeatherInfo from "./MiscWeatherInfo";
 import RetrievalDate from "./RetrievalDate";
@@ -15,34 +16,10 @@ export function WeatherCard() {
   // Fetch data for selected city
   const { mainData, miscData, isLoading } = getWeatherData(city);
 
-  // check if finished loading data
-  if (!isLoading) {
-    console.log(mainData);
-    console.log(miscData);
-  }
-  /*
-    mainData {
-        city
-        country
-        weather
-        description
-        icon
-        temp
-        feels_like
-        temp_min
-        temp_max
-    },
-    miscData {
-        humidity,
-        pressure,
-        visibility,
-        wind.deg,
-        wind.speed,
-    }, isLoading, hasError, errorMessage
-  */
 
   return (
     <div>
+      <Header setCity={setCity}/>
       {isLoading ? (
         <RetrievalDate />
       ) : (
@@ -52,6 +29,7 @@ export function WeatherCard() {
           <RetrievalDate />
         </div>
       )}
+
     </div>
   );
 }

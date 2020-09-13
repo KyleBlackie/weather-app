@@ -1,15 +1,20 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../styling/SearchBar.css";
 
-export class SearchBar extends Component {
-  render() {
+export function SearchBar({setCity}) {
+    const [inputCity, setInputCity] = useState('');
+
     return (
-      <div className="searchInputs">
-        <input type="text" id="searchInput" placeholder="City Name..."></input>
+      <form className="searchInputs"
+      onSubmit={(e) => {
+        // Update city info when user presses search button
+        e.preventDefault();
+        setCity(inputCity);
+      }}>
+        <input type="text" id="searchInput" placeholder="City Name..." onChange={(e) => setInputCity(e.target.value)}></input>
         <button type="button">Search</button>
-      </div>
+      </form>
     );
-  }
 }
 
 export default SearchBar;

@@ -1,5 +1,4 @@
 import React from "react";
-import {convertToCelcius} from "./Helpers";
 
 
 export function MainWeatherInfo(miscData, unit) {
