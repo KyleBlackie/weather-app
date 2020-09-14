@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import Header from "./Header";
 import MainWeatherInfo from "./MainWeatherInfo";
 import MiscWeatherInfo from "./MiscWeatherInfo";
-import RetrievalDate from "./RetrievalDate";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
+import { checkStorage } from "./Helpers";
 import { GetWeatherData } from "./APIFunctions";
 
 //import "../styling/WeatherCard.css";
 
 export function WeatherCard() {
+  // if local storage is available for the browser then check if previous search data has been recorded
+  let search = checkStorage();
+
+  console.log(localStorage.getItem('city'));
+  
   // Set state for the selected city name and units being used
-  const [city, setCity] = useState("Toronto");
-  const [unit, setUnit] = useState("m");
+  const [city, setCity] = useState(search.city);
+  const [unit, setUnit] = useState(search.unit);
 
   // Fetch data for selected city
   const {

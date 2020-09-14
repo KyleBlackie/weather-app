@@ -75,6 +75,10 @@ export const GetWeatherData = (query) => {
         windDeg: data.wind.deg,
         windSpeed: data.wind.speed,
       });
+
+      // update local storage
+      localStorage.setItem("city", data.name);
+      //console.log(localStorage.getItem("city"));
     }
   }, [data]);
 

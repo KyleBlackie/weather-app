@@ -73,27 +73,86 @@ export const getMonthFromInt = (month) => {
 
 // given a degree, outputs the direction in common terms i.e. N, NE, E, SE ...
 export const getDirectionFromDegree = (degree) => {
-
   // divide up 360 degrees into 8 parts... 45 degrees for each direction
-  if(degree >= 337.5 || degree < 22.5) {
-    return "N";
-  } else if(degree < 67.5) {
-    return "NE";
-  } else if(degree < 112.5) {
-    return "E";
-  } else if(degree < 157.5) {
-    return "SE";
-  } else if(degree < 202.5) {
-    return "S";
-  } else if(degree < 247.5) {
-    return "SW";
-  } else if(degree < 292.5) {
-    return "W";
-  } else if(degree < 337.5) {
-    return "NW";
+  if (degree >= 337.5 || degree < 22.5) {
+    return "North";
+  } else if (degree < 67.5) {
+    return "North-East";
+  } else if (degree < 112.5) {
+    return "East";
+  } else if (degree < 157.5) {
+    return "South-East";
+  } else if (degree < 202.5) {
+    return "South";
+  } else if (degree < 247.5) {
+    return "South-West";
+  } else if (degree < 292.5) {
+    return "West";
+  } else if (degree < 337.5) {
+    return "North-West";
   } else {
     return "N/A";
   }
+};
+
+/* A Function that detects whether localStorage is both supported and available.
+ * This function was provided by the Mozilla MDN web docs for the Web Storage API.
+ * Reference: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+ */
+export function storageAvailable(type) {
+  var storage;
+  try {
+    storage = window[type];
+    var x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      // everything except Firefox
+      (e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}
+
+// checks if there is any personalized search data and returns an object containing search settings
+export const checkStorage = () => {
+  // if local storage is available for the browser then check if previous search data has been recorded
+  let search;
+  if (
+    storageAvailable("localStorage") &&
+    localStorage.getItem("city") &&
+    localStorage.getItem("unit")
+  ) {
+    // use personalized search data
+    search = {
+      city: localStorage.getItem("city"),
+      unit: localStorage.getItem("unit"),
+    };
+  } else {
+    // use default search data
+    search = {
+      city: "Toronto",
+      unit: "m",
+    };
+    
+    // set local storage values
+    localStorage.setItem("city", "Toronto");
+    localStorage.setItem("unit", "m");
+  }
+
+  return search;
 };
 
 // CONVERSION HELPER FUNCTIONS --------------------
