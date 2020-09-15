@@ -1,17 +1,16 @@
 import React from "react";
-import { getDirectionFromDegree, convertToKPH } from "./Helpers";
+import { getDirectionFromDegree, convertToKPH, convertToMPH } from "./Helpers";
 
 import "../styling/MiscWeatherInfo.css" 
 
-export function MainWeatherInfo(miscData, unit) {
+export function MainWeatherInfo(props) {
   return (
     <div className="MiscWeatherInfo"> 
-      <h1>Humidity: {miscData.humidity}% </h1>
+      <h1>Humidity: {props.miscData.humidity}% </h1>
       <h1>
-        Wind: {Math.round(convertToKPH(miscData.windSpeed) * 10) / 10}km/h{" "}
-        {getDirectionFromDegree(miscData.windDeg)}
+  Wind: {Math.round((props.unit === 'm' ? convertToKPH(props.miscData.windSpeed) : convertToMPH(props.miscData.windSpeed)) * 10) / 10}{props.unit === 'm' ? `km/h`: `mi/h`}{" "}
+        {getDirectionFromDegree(props.miscData.windDeg)}
       </h1>
-      <h1>Pressure: {miscData.pressure}hPA</h1>
     </div>
   );
 }

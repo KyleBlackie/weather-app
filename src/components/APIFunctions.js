@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { storageAvailable } from "./Helpers";
 
 // uses fetch to request data from OpenWeatherAPI
 export const FetchAPIData = (url) => {
@@ -77,8 +78,7 @@ export const GetWeatherData = (query) => {
       });
 
       // update local storage
-      localStorage.setItem("city", data.name);
-      //console.log(localStorage.getItem("city"));
+      if (storageAvailable("localStorage"))  localStorage.setItem("city", data.name);
     }
   }, [data]);
 

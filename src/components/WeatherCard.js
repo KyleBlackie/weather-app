@@ -13,8 +13,6 @@ export function WeatherCard() {
   // if local storage is available for the browser then check if previous search data has been recorded
   let search = checkStorage();
 
-  console.log(localStorage.getItem('city'));
-  
   // Set state for the selected city name and units being used
   const [city, setCity] = useState(search.city);
   const [unit, setUnit] = useState(search.unit);
@@ -37,8 +35,8 @@ export function WeatherCard() {
         <Loading />
       ) : (
         <div>
-          <MainWeatherInfo {...mainData} />
-          <MiscWeatherInfo {...miscData} />
+          <MainWeatherInfo mainData={mainData} unit={unit} setUnit={setUnit}/>
+          <MiscWeatherInfo miscData={miscData} unit={unit}/>
         </div>
       )}
     </div>

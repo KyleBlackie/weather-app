@@ -146,7 +146,7 @@ export const checkStorage = () => {
       city: "Toronto",
       unit: "m",
     };
-    
+
     // set local storage values
     localStorage.setItem("city", "Toronto");
     localStorage.setItem("unit", "m");

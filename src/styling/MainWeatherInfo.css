@@ -1,0 +1,7 @@
+.switch-field input[type="radio"] {
+    display: none;
+}
+
+.switch-field input[type="radio"]:not(:checked) + label {
+    color: darkblue;
+  }
