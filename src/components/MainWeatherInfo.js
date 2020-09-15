@@ -10,11 +10,11 @@ export function MainWeatherInfo(props) {
 
   return (
     <div>
-      <h1>
-        {props.mainData.city}, {props.country}
+      <h1 id="city-name">
+        {props.mainData.city}, {props.mainData.country}
       </h1>
-      <div>
-        <h1 style={{ fontSize: "50px" }}>
+      <div id="main-temp-container">
+        <h1 id="main-temp">
           {Math.round((useMetric ? convertToCelcius(props.mainData.temp) : convertToFahrenheit(props.mainData.temp)) * 10) / 10}
         </h1>
         <div className="switch-field" onChange={(e) => {
@@ -34,11 +34,11 @@ export function MainWeatherInfo(props) {
         {Math.round(useMetric ? convertToCelcius(props.mainData.tempMin) : convertToFahrenheit(props.mainData.tempMin))} /{" "}
         {Math.round(useMetric ? convertToCelcius(props.mainData.tempMax) : convertToFahrenheit(props.mainData.tempMax))}
       </h4>
-      <h1>{props.mainData.weather}</h1>
+      <h2 id="weather">{props.mainData.weather}</h2>
       <FontAwesomeIcon
         icon={pickFAIcon(props.mainData.id)}
         size="lg"
-        style={{ fontSize: "15vh" }}
+        style={{ fontSize: "150px" , margin: "20px"}}
       />
     </div>
   );

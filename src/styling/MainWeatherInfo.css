@@ -1,7 +1,36 @@
+.switch-field {
+  padding-top: 15px;
+}
 .switch-field input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 .switch-field input[type="radio"]:not(:checked) + label {
-    color: darkblue;
-  }
+  color: darkblue;
+}
+
+#main-temp-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+}
+
+#main-temp {
+  font-size: 70px;
+  margin: 0;
+}
+
+#city-name {
+    font-size: 40px;
+    margin: 2vh 0 1vh 0;
+}
+
+#weather {
+    margin: 2vh 0 0 0;
+    font-size: 30px;
+}
+
+h4 {
+  margin: 0 0 3vh 0;
+}
