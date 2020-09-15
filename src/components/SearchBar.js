@@ -19,7 +19,7 @@ export function SearchBar({ setCity }) {
         placeholder="City Name..."
         onChange={(e) => setInputCity(e.target.value)}
       ></input>
-      <button type="button">Search</button>
+      <button type="submit" >Search</button>
     </form>
   );
 }
