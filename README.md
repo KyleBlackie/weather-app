@@ -8,7 +8,7 @@ What I learned:
 - React Hooks
 - How to use the Web Storage API
 
-
+Demo this project at: https://kyleblackie.github.io/weather-app/
 
 ![Imgur](https://i.imgur.com/pmm2doY.jpg)
 
