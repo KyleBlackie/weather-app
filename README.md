@@ -13,7 +13,11 @@ Demo this project at: https://kyleblackie.github.io/weather-app/
 |![Imgur](https://i.imgur.com/pmm2doY.jpg)|
 |:--:| 
 | *Weather app after searching for Toronto* |
-*Weather app after searching for Toronto*
-![Imgur](https://i.imgur.com/dmbm7mL.jpg)
 
-![Imgur](https://i.imgur.com/9aGPTkX.jpg)
+|![Imgur](https://i.imgur.com/dmbm7mL.jpg)|
+|:--:| 
+| *The weather app's loading screen* |
+
+|![Imgur](https://i.imgur.com/9aGPTkX.jpg)|
+|:--:| 
+| *Error message* |
