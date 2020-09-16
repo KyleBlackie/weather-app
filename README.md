@@ -20,4 +20,4 @@ Demo this project at: https://kyleblackie.github.io/weather-app/
 
 |![Imgur](https://i.imgur.com/9aGPTkX.jpg)|
 |:--:| 
-| *Error message after city not found by the OpenWeatherAPI* |
+| *Error message displayed after city not found by the OpenWeatherAPI* |
