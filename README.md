@@ -10,7 +10,9 @@ What I learned:
 
 Demo this project at: https://kyleblackie.github.io/weather-app/
 
-![Imgur](https://i.imgur.com/pmm2doY.jpg)
+|![Imgur](https://i.imgur.com/pmm2doY.jpg)|
+|:--:| 
+| *Weather app after searching for Toronto* |
 *Weather app after searching for Toronto*
 ![Imgur](https://i.imgur.com/dmbm7mL.jpg)
 
