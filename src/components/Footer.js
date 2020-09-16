@@ -6,7 +6,7 @@ import "../styling/Footer.css";
 export function Footer() {
   return (
     <div className="footer">
-      <h1>Kyle Blackie ©2020</h1>
+      <h1>Kyle Blackie ©{new Date().getFullYear()}</h1>
       <a
         target="_blank"
         rel="noopener noreferrer"
