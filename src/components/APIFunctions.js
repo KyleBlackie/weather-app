@@ -42,8 +42,8 @@ export const FetchAPIData = (url) => {
 
 // handles data returned from FetchAPIData
 export const GetWeatherData = (query) => {
-  // Unfortunately, since this project is done without a backend there is no way to properly protect the api key
-  // If this were a full stack app I would've done this logic on the backend so that the api key would be safe
+  // NOTE: Unfortunately, since this project is done without a backend there is no way to properly protect the api key
+  //       If this were a full stack app I would have kept the api key secure / hidden on the server side
   const API_KEY = "9cbaa4d848fd26272a434bb68609eace";
   const url =
     query &&
